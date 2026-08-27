@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Minha Primeira Requisição - Web III</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 40px; background: #f4f4f9; }
+        .card { background: white; padding: 20px; border-radius: 8px; max-width: 400px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+        button { background: #1e3a8a; color: white; border: none; padding: 10px 15px; border-radius: 4px; cursor: pointer; }
+        button:hover { background: #0e7490; }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <h2>Painel do Aluno (VIEW)</h2>
+        <p>Clique no botão para buscar uma mensagem do servidor:</p>
+        <button onclick="buscarDados()">Carregar Dados</button>
+        <h3 id="mensagem" style="color: #0e7490; margin-top: 15px;"></h3>
+    </div>
+
+    <script>
+        function buscarDados() {
+            // Simulado o Controller/Servidor respondendo:
+            document.getElementById('mensagem').innerText = "✅ Conexão estabelecida com sucesso!";
+        }
+    </script>
+</body>
+</html>
