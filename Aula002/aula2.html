@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Aula 02 - Consumindo JSON</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 30px; background: #eef2f7; }
+        .card { background: white; padding: 20px; border-radius: 8px; max-width: 450px; }
+        button { background: #0e7490; color: white; border: none; padding: 10px 15px; border-radius: 4px; cursor: pointer; }
+        .resultado { margin-top: 15px; padding: 10px; background: #f8fafc; border-left: 4px solid #1e3a8a; }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <h2>Perfil do Usuário (JSON)</h2>
+        <button onclick="carregarPerfil()">Buscar Perfil</button>
+        <div id="dados" class="resultado">Clique no botão para carregar dados...</div>
+    </div>
+
+    <script>
+        function carregarPerfil() {
+            // Simulação de uma resposta JSON vinda do servidor
+            const respostaServidor = '{"nome": "Lucas Silva", "curso": "Informática", "modulo": "3º Ano"}';
+            
+            // Convertendo a string JSON para um Objeto JavaScript real
+            const usuario = JSON.parse(respostaServidor);
+            
+            // Atualizando a tela sem recarregar a página (Assíncrono)
+            document.getElementById('dados').innerHTML = 
+                '<b>Nome:</b> ' + usuario.nome + '<br>' +
+                '<b>Curso:</b> ' + usuario.curso + '<br>' +
+                '<b>Ano:</b> ' + usuario.modulo;
+        }
+    </script>
+</body>
+</html>
